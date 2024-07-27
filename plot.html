@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D Plot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>3D Plot of Device Positions</h2>
+        {% if fig_hmd %}
+            <div class="plot-container">
+                <h3>HMD Device Position</h3>
+                <div class="plotly-graph-div">{{ fig_hmd | safe }}</div>
+            </div>
+        {% endif %}
+        {% if fig_hand_right %}
+            <div class="plot-container">
+                <h3>Right Hand Position</h3>
+                <div class="plotly-graph-div">{{ fig_hand_right | safe }}</div>
+            </div>
+        {% endif %}
+        {% if fig_hand_left %}
+            <div class="plot-container">
+                <h3>Left Hand Position</h3>
+                <div class="plotly-graph-div">{{ fig_hand_left | safe }}</div>
+            </div>
+        {% endif %}
+        <a href="/">Upload another file</a>
+    </div>
+</body>
+</html>
